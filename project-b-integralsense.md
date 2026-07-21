@@ -86,8 +86,10 @@ and friendlier for a beginner.
 3. Add **Tailwind CSS** for styling. *(frontend)*
 4. Create a free **Supabase** project to get a hosted **PostgreSQL** database; copy
    its connection string. *(SQL database, cloud service)*
-5. Add **Prisma**, point it at the Supabase database, write the schema from Part 1,
-   and run a "migration" (Prisma creates the real tables for you). *(SQL, ORM)*
+5. Add **Prisma 6** (pin with `prisma@6` / `@prisma/client@6` — see
+   `general_tips.md`), point it at the Supabase database, write the schema from
+   Part 1, and run a "migration" (Prisma creates the real tables for you).
+   *(SQL, ORM)*
 
 ### Step 2 — Seed some content
 Before any UI, write a small "seed" script that inserts ~30 problems with
