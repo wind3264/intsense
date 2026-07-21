@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String
+  createdAt DateTime @default(now())
+  solves Solve[]
+  solutions Solution[]
+}
+
+model Problem {
+  id         Int          @id @default(autoincrement())
+  latex      String
+  answerKey  String
+  difficulty Int
+  createdAt  DateTime     @default(now())
+  tags       ProblemTag[]
+  solves Solve[]
+  solutions Solution[]
+}
+
+model Tag {
+  id       Int          @id @default(autoincrement())
+  name     String       @unique
+  problems ProblemTag[]
+  wikiPages WikiPage[]
+}
+
+model ProblemTag {
+  id        Int     @id @default(autoincrement())
+  problemId Int
+  tagId     Int
+  problem   Problem @relation(fields: [problemId], references: [id])
+  tag       Tag     @relation(fields: [tagId], references: [id])
+
+  @@unique([problemId, tagId])
+  @@index([tagId])
+}
+
+model Solve {
+  userId Int
+  problemId Int
+  solvedAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+  problem Problem @relation(fields: [problemId], references: [id])
+
+  @@id([userId, problemId])
+  @@index([problemId])
+}
+
+model Solution {
+  id Int @id @default(autoincrement())
+  userId Int
+  problemId Int
+  body String
+  upvotes Int @default(0)
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+  problem Problem @relation(fields: [problemId], references: [id])
+
+  @@index([problemId])
+}
+
+model WikiPage {
+  id Int @id @default(autoincrement())
+  slug String @unique
+  title String
+  body String
+  relatedTagId Int?
+  relatedTag Tag? @relation(fields: [relatedTagId], references: [id])
+}
