@@ -7,13 +7,47 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+ 
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@map("sessions")
+}
+
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String
+  id        String   @id @default(cuid())
+  email     String   @unique
+  emailVerified DateTime?
+  image     String?
+  name      String?
   createdAt DateTime @default(now())
-  solves Solve[]
+  solves    Solve[]
   solutions Solution[]
+  accounts Account[]
+  sessions Session[]
 }
 
 model Problem {
@@ -46,25 +80,25 @@ model ProblemTag {
 }
 
 model Solve {
-  userId Int
+  userId    String
   problemId Int
-  solvedAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id])
-  problem Problem @relation(fields: [problemId], references: [id])
+  solvedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  problem   Problem  @relation(fields: [problemId], references: [id])
 
   @@id([userId, problemId])
   @@index([problemId])
 }
 
 model Solution {
-  id Int @id @default(autoincrement())
-  userId Int
+  id        Int      @id @default(autoincrement())
+  userId    String
   problemId Int
-  body String
-  upvotes Int @default(0)
+  body      String
+  upvotes   Int      @default(0)
   createdAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id])
-  problem Problem @relation(fields: [problemId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  problem   Problem  @relation(fields: [problemId], references: [id])
 
   @@index([problemId])
 }
