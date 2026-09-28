@@ -46,6 +46,7 @@ model User {
   createdAt DateTime @default(now())
   solves    Solve[]
   solutions Solution[]
+  votes     SolutionVote[]
   accounts Account[]
   sessions Session[]
 }
@@ -95,12 +96,23 @@ model Solution {
   userId    String
   problemId Int
   body      String
-  upvotes   Int      @default(0)
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id])
   problem   Problem  @relation(fields: [problemId], references: [id])
+  votes     SolutionVote[]
 
   @@index([problemId])
+}
+
+// One upvote per user per solution; a solution's score is its vote count.
+model SolutionVote {
+  userId     String
+  solutionId Int
+  user       User     @relation(fields: [userId], references: [id])
+  solution   Solution @relation(fields: [solutionId], references: [id])
+
+  @@id([userId, solutionId])
+  @@index([solutionId])
 }
 
 model WikiPage {
