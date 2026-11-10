@@ -65,7 +65,7 @@ export function TagPicker({
         aria-expanded={open}
         aria-controls={listId}
         aria-autocomplete="list"
-        placeholder={selected.length === 0 ? "Any tag - search to choose" : "Search tags"}
+        placeholder="Search tags"
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

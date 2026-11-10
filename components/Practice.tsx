@@ -58,7 +58,7 @@ export function Practice({ items, tags }: { items: PracticeItem[]; tags: string[
           </div>
         </div>
         <button
-          className="mt-6 w-full rounded bg-accent py-2.5 font-semibold text-background transition-opacity hover:opacity-90 disabled:cursor-default disabled:opacity-50"
+          className="mt-6 w-full cursor-pointer rounded bg-accent py-2.5 font-semibold text-background transition-opacity hover:opacity-90 disabled:cursor-default disabled:opacity-50"
           disabled={candidates.length === 0}
           onClick={go}
         >
