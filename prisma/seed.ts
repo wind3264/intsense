@@ -25,7 +25,9 @@ const wikiPages = [
 
 async function main() {
   const tagIds = new Map<string, number>();
-  for (const { tag } of wikiPages) {
+  // Technique tags come with a wiki page; source tags (e.g. "MIT Integration Bee") only appear on problems.
+  const tagNames = new Set([...wikiPages.map((p) => p.tag), ...problems.flatMap((p) => p.tags)]);
+  for (const tag of tagNames) {
     const { id } = await prisma.tag.upsert({
       where: { name: tag },
       update: {},

@@ -1,191 +1,7 @@
 [
   {
-    "latex": "\\int_0^1 x^2 \\, dx",
-    "answerKey": "1/3",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 x \\, dx",
-    "answerKey": "1/2",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^3 2x \\, dx",
-    "answerKey": "9",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_1^2 x^3 \\, dx",
-    "answerKey": "15/4",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 (3x^2 + 1) \\, dx",
-    "answerKey": "2",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^2 (x + 1) \\, dx",
-    "answerKey": "4",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 \\sqrt{x} \\, dx",
-    "answerKey": "2/3",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_1^4 \\frac{1}{\\sqrt{x}} \\, dx",
-    "answerKey": "2",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^{\\pi} \\sin x \\, dx",
-    "answerKey": "2",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^{\\pi/2} \\cos x \\, dx",
-    "answerKey": "1",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^{\\pi} \\cos x \\, dx",
-    "answerKey": "0",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^{\\pi/4} \\sec^2 x \\, dx",
-    "answerKey": "1",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_1^{e} \\frac{1}{x} \\, dx",
-    "answerKey": "1",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 e^x \\, dx",
-    "answerKey": "e-1",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 (2x + 3) \\, dx",
-    "answerKey": "4",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_{-1}^1 x^2 \\, dx",
-    "answerKey": "2/3",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_{-1}^1 x \\, dx",
-    "answerKey": "0",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^2 x^3 \\, dx",
-    "answerKey": "4",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_1^2 (4x^3 - 1) \\, dx",
-    "answerKey": "14",
-    "difficulty": 2,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^1 (x^2 + 2x) \\, dx",
-    "answerKey": "4/3",
-    "difficulty": 1,
-    "tags": []
-  },
-  {
-    "latex": "\\int_0^{\\pi/6} \\cos(3x) \\, dx",
-    "answerKey": "1/3",
-    "difficulty": 3,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int x e^{x^2} \\, dx",
-    "answerKey": "\\frac{1}{2} e^{x^2} + C",
-    "difficulty": 1,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int \\frac{\\ln x}{x} \\, dx",
-    "answerKey": "\\frac{(\\ln x)^2}{2} + C",
-    "difficulty": 1,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int_0^1 \\frac{x}{\\sqrt{1+x^2}} \\, dx",
-    "answerKey": "\\sqrt{2} - 1",
-    "difficulty": 2,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int \\tan x \\, dx",
-    "answerKey": "-\\ln\\left|\\cos x\\right| + C",
-    "difficulty": 2,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int_0^{\\pi/2} \\sin^3 x \\cos x \\, dx",
-    "answerKey": "\\frac{1}{4}",
-    "difficulty": 2,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
     "latex": "\\int \\frac{e^x}{1+e^{2x}} \\, dx",
     "answerKey": "\\arctan(e^x) + C",
-    "difficulty": 2,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int_1^{e} \\frac{\\sin(\\ln x)}{x} \\, dx",
-    "answerKey": "1 - \\cos 1",
-    "difficulty": 2,
-    "tags": [
-      "u-Substitution"
-    ]
-  },
-  {
-    "latex": "\\int \\frac{1}{x \\ln x} \\, dx",
-    "answerKey": "\\ln\\left|\\ln x\\right| + C",
     "difficulty": 2,
     "tags": [
       "u-Substitution"
@@ -213,30 +29,6 @@
     "difficulty": 3,
     "tags": [
       "u-Substitution",
-      "Integration by Parts"
-    ]
-  },
-  {
-    "latex": "\\int x e^x \\, dx",
-    "answerKey": "(x-1)e^x + C",
-    "difficulty": 1,
-    "tags": [
-      "Integration by Parts"
-    ]
-  },
-  {
-    "latex": "\\int \\ln x \\, dx",
-    "answerKey": "x \\ln x - x + C",
-    "difficulty": 2,
-    "tags": [
-      "Integration by Parts"
-    ]
-  },
-  {
-    "latex": "\\int_0^{\\pi} x \\sin x \\, dx",
-    "answerKey": "\\pi",
-    "difficulty": 2,
-    "tags": [
       "Integration by Parts"
     ]
   },
@@ -305,22 +97,6 @@
     ]
   },
   {
-    "latex": "\\int \\frac{1}{x^2-1} \\, dx",
-    "answerKey": "\\frac{1}{2}\\ln\\left|\\frac{x-1}{x+1}\\right| + C",
-    "difficulty": 2,
-    "tags": [
-      "Partial Fractions"
-    ]
-  },
-  {
-    "latex": "\\int_0^1 \\frac{1}{(x+1)(x+2)} \\, dx",
-    "answerKey": "\\ln\\frac{4}{3}",
-    "difficulty": 2,
-    "tags": [
-      "Partial Fractions"
-    ]
-  },
-  {
     "latex": "\\int \\frac{1}{x(x^2+1)} \\, dx",
     "answerKey": "\\ln\\left|x\\right| - \\frac{1}{2}\\ln(x^2+1) + C",
     "difficulty": 3,
@@ -342,14 +118,6 @@
     "difficulty": 4,
     "tags": [
       "Partial Fractions"
-    ]
-  },
-  {
-    "latex": "\\int_0^{\\pi/2} \\sin^2 x \\, dx",
-    "answerKey": "\\frac{\\pi}{4}",
-    "difficulty": 1,
-    "tags": [
-      "Trigonometric Identities"
     ]
   },
   {
@@ -472,6 +240,1590 @@
     "difficulty": 5,
     "tags": [
       "Feynman's Rule"
+    ]
+  },
+  {
+    "latex": "\\int_0^{45} (b \\cdot e \\cdot e) \\, db",
+    "answerKey": "\\frac{2025e^2}{2}",
+    "difficulty": 1,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{(x+67)(x+41)} \\, dx",
+    "answerKey": "\\frac{1}{26}\\ln\\left|\\frac{x+41}{x+67}\\right| + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} \\frac{x \\arcsin(x)}{\\sqrt{1-x^2}} \\, dx",
+    "answerKey": "2",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln x}{x(1+\\ln^4(x))} \\, dx",
+    "answerKey": "\\frac{1}{2}\\arctan(\\ln^2 x) + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\pi^{\\ln x} \\, dx",
+    "answerKey": "\\frac{x^{1+\\ln\\pi}}{1+\\ln\\pi} + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\infty}^{\\infty} x^2 \\exp(-x^6) \\, dx",
+    "answerKey": "\\frac{\\sqrt{\\pi}}{3}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sin(\\arctan x) \\, dx",
+    "answerKey": "\\sqrt{1+x^2} + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{(x+6)\\sqrt{x-7}} \\, dx",
+    "answerKey": "\\frac{2}{\\sqrt{13}}\\arctan\\sqrt{\\frac{x-7}{13}} + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{(x+1)\\sqrt{1-x^2}} \\, dx",
+    "answerKey": "-\\sqrt{\\frac{1-x}{1+x}} + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{4}} \\sum_{n=0}^{\\infty} \\frac{\\cos x \\sin^n(x)}{n!} \\, dx",
+    "answerKey": "e^{\\frac{\\sqrt{2}}{2}} - 1",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\int_0^{\\infty} \\frac{y}{x^2+y^2} \\, dx \\, dy",
+    "answerKey": "\\frac{\\pi}{2}",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} (\\arcsin x + \\arccos x + \\arctan x) \\, dx",
+    "answerKey": "\\pi",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{(\\sin x + \\cos x)\\cot\\left(\\frac{\\pi}{4} - x\\right)} \\, dx",
+    "answerKey": "-\\frac{1}{\\sin x + \\cos x} + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{16} \\binom{15}{\\lfloor x \\rfloor} \\cos(\\pi \\lceil x \\rceil) \\, dx",
+    "answerKey": "0",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int e^x \\left( \\sin(\\sqrt{x}) + \\frac{\\cos(\\sqrt{x})}{2\\sqrt{x}} \\right) dx",
+    "answerKey": "e^x \\sin(\\sqrt{x}) + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\begin{gathered} \\text{Let } A = \\int_1^2 \\frac{x^3}{x^6+1} \\, dx, \\quad B = \\int_1^2 \\frac{x^{-3}}{x^6+1} \\, dx. \\\\ \\text{Given } B = cA + d \\text{ where } c, d \\text{ are real numbers, compute } cd. \\end{gathered}",
+    "answerKey": "-\\frac{3}{8}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\frac{\\pi}{4}}^{\\frac{\\pi}{4}} \\frac{\\cos^2(x)}{1+e^{x^3\\cos(x)}} \\, dx",
+    "answerKey": "\\frac{\\pi}{8} + \\frac{1}{4}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\begin{gathered} \\text{Let } f(x) = e^x \\text{, and define } f_n(x) \\text{ to be } f \\text{ composed with} \\\\ \\text{itself } n \\text{ times, e.g. } f_2(x) = f(f(x)). \\text{ Evaluate } \\int \\prod_{n=1}^{100} f_n(x) \\, dx. \\end{gathered}",
+    "answerKey": "f_{100}(x) + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\operatorname{Si}(x) \\, dx, \\quad \\text{where } \\operatorname{Si}(x) = \\int_0^x \\frac{\\sin t}{t} \\, dt",
+    "answerKey": "x \\operatorname{Si}(x) + \\cos x + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln(x+\\sqrt{x^2+1})}{\\sqrt{x^2+1}} \\, dx",
+    "answerKey": "\\frac{1}{2}\\ln^2\\left(x+\\sqrt{x^2+1}\\right) + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^{2025} e^{\\gcd(\\lfloor x \\rfloor, 6)} \\, dx",
+    "answerKey": "337e^6 + 337e^3 + 675e^2 + 675e",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{\\frac{2}{\\pi}}^{\\frac{\\pi}{2}} \\frac{\\arctan x}{x} \\, dx",
+    "answerKey": "\\frac{\\pi}{2}\\ln\\frac{\\pi}{2}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sqrt{1-\\sin x}}{2025+\\sin x} \\, dx",
+    "answerKey": "\\frac{1}{\\sqrt{506}}\\arctan\\sqrt{\\frac{1+\\sin x}{2024}} + C \\quad (\\text{where } \\cos x > 0)",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\sqrt{1-\\operatorname{csch}^2(x)}} \\, dx",
+    "answerKey": "\\ln\\left(\\cosh x + \\sqrt{\\cosh^2 x - 2}\\right) + C \\quad (\\text{where } x > 0)",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\ln(\\sin(2x)\\sec^2(x)) \\, dx",
+    "answerKey": "\\frac{\\pi}{2}\\ln 2",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\infty}^{\\infty} e^{-x^2} e^{-x^{-2}} \\, dx",
+    "answerKey": "\\frac{\\sqrt{\\pi}}{e^2}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\left\\lceil \\int_1^{\\infty} \\min_{n \\in \\mathbb{Z}_{>0}} \\left( \\frac{n!}{\\lfloor x \\rfloor^n} \\right) dx \\right\\rceil",
+    "answerKey": "2",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x}{1+x+x^2+x^3} \\, dx",
+    "answerKey": "\\frac{1}{4}\\ln(1+x^2) - \\frac{1}{2}\\ln\\left|1+x\\right| + \\frac{1}{2}\\arctan x + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{\\frac{1}{2\\sqrt{2}}}^{1} \\arccos(\\sqrt[3]{x}) \\, dx",
+    "answerKey": "\\frac{5\\sqrt{2}}{12} - \\frac{\\pi\\sqrt{2}}{16}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sec^2 x \\ln(\\sec^2 x) \\, dx",
+    "answerKey": "\\tan x \\ln(\\sec^2 x) - 2\\tan x + 2x + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{e^x x^x \\ln x}{(x^x)^2 + (e^x)^2} \\, dx",
+    "answerKey": "\\arctan\\left(\\frac{x^x}{e^x}\\right) + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x}{\\sqrt{x+\\sqrt{x+\\sqrt{x+\\cdots}}}} \\, dx",
+    "answerKey": "\\frac{(1+4x)^{3/2}}{12} - \\frac{x}{2} + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\sum_{k=1}^{2025} \\frac{1}{1+\\sqrt[k]{\\frac{\\tan x}{\\sqrt[k]{\\frac{\\tan x}{\\sqrt[k]{\\cdots}}}}}} \\, dx",
+    "answerKey": "\\frac{2025\\pi}{4}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln(x+2025)}{\\sqrt{x+2025}} \\, dx",
+    "answerKey": "2\\sqrt{x+2025}\\left(\\ln(x+2025) - 2\\right) + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{x^3\\sqrt{x^4+1}} \\, dx",
+    "answerKey": "-\\frac{\\sqrt{x^4+1}}{2x^2} + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\sin x\\sqrt{\\sin(2x)}} \\, dx",
+    "answerKey": "-\\sqrt{2\\cot x} + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^{\\infty} \\frac{x + \\lfloor x \\rfloor \\{x\\}}{x \\lfloor x \\rfloor^2} \\, dx",
+    "answerKey": "\\gamma + \\frac{\\pi^2}{6}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sqrt{6}-\\sqrt{2}+(\\sqrt{6}+\\sqrt{2})\\tan x}{\\sqrt{6}+\\sqrt{2}-(\\sqrt{6}-\\sqrt{2})\\tan x} \\, dx",
+    "answerKey": "-\\ln\\left|\\cos\\left(x+\\frac{\\pi}{12}\\right)\\right| + C",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\frac{\\cos(x)\\cos(2x)}{1+\\cos(x)} \\, dx",
+    "answerKey": "\\pi - 3",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\infty}\\int_0^{\\infty} \\frac{e^{-x}e^{-y}}{x+y} \\, dx \\, dy",
+    "answerKey": "1",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\ln(1+5\\tan^2(x)) \\, dx",
+    "answerKey": "\\pi\\ln(1+\\sqrt{5})",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\frac{1}{\\sqrt{1+\\cos x}+\\sqrt{1-\\cos x}} \\, dx",
+    "answerKey": "\\ln(1+\\sqrt{2})",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{(\\sinh x+\\cosh x)\\left((1-e^{2x})^2-e^{4x}\\right)}{\\sqrt{1-\\sinh(2x)-\\cosh(2x)}} \\, dx",
+    "answerKey": "e^x\\sqrt{1-e^{2x}} + C",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{45} \\left(2b+\\frac{1}{45}\\right) db",
+    "answerKey": "2026",
+    "difficulty": 1,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int e^{x\\sin^2 x + x\\cos^2 x} \\, dx",
+    "answerKey": "e^x + C",
+    "difficulty": 1,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\frac{1}{x^{4052}+x^{2026}}+\\frac{1}{x^{2026}+1}\\right) dx",
+    "answerKey": "-\\frac{1}{2025x^{2025}} + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\frac{1}{2}}^{\\frac{1}{2}} x\\cos\\left(e^{x^2}\\sin x\\right)\\tan(e^{\\cos x}) \\, dx",
+    "answerKey": "0",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\cos\\left(\\sqrt{x}\\right) dx",
+    "answerKey": "2\\sqrt{x}\\sin\\sqrt{x} + 2\\cos\\sqrt{x} + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\sqrt{1+\\sin(2x)} \\, dx",
+    "answerKey": "2",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\sec x+\\tan x} \\, dx",
+    "answerKey": "\\ln\\left|1+\\sin x\\right| + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{-x^{-1}+x^{-2}-x^{-3}+x^{-4}-\\cdots} \\, dx, \\quad |x| > 1",
+    "answerKey": "-\\frac{x^2}{2} - x + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 5^{\\ln(2x)} \\, dx",
+    "answerKey": "\\frac{5^{\\ln 2}}{1+\\ln 5}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\frac{1}{1+\\left(\\frac{1+\\tan x}{1+\\cot x}\\right)^{2026}} \\, dx",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt{\\frac{1-x}{1+x}} \\, dx",
+    "answerKey": "\\arcsin x + \\sqrt{1-x^2} + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int e^x\\left(\\cos^6 x-15\\cos^4 x\\sin^2 x+15\\cos^2 x\\sin^4 x-\\sin^6 x\\right) dx",
+    "answerKey": "\\frac{e^x(\\cos 6x + 6\\sin 6x)}{37} + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\left(\\arctan x+\\frac{x}{1+x^2}\\right)\\cos(x\\arctan x) \\, dx",
+    "answerKey": "\\frac{\\sqrt{2}}{2}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} \\frac{\\ln(1+x^2)}{1+e^x} \\, dx",
+    "answerKey": "\\ln 2 - 2 + \\frac{\\pi}{2}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt{1+\\prod_{k=0}^{3}(e^x+k)} \\, dx",
+    "answerKey": "\\frac{e^{2x}}{2} + 3e^x + x + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln(\\sin x)}{\\cos^2 x} \\, dx",
+    "answerKey": "\\tan x\\ln(\\sin x) - x + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{5} x\\sqrt{5+4x-x^2} \\, dx",
+    "answerKey": "9\\pi",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^2 \\frac{2x+3}{x(x+1)(x+2)(x+3)} \\, dx",
+    "answerKey": "\\frac{1}{2}\\ln\\frac{5}{4}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} \\frac{\\arccos x}{\\sqrt{4-x^2}} \\, dx",
+    "answerKey": "\\frac{\\pi^2}{6}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\begin{gathered} \\text{Let } T(x) = x^{x^{x^{\\cdot^{\\cdot^{\\cdot}}}}} \\text{ be the infinite power tower.} \\\\ \\text{Evaluate } \\int_1^{\\sqrt{2}} \\frac{T(x)^2}{x\\left(1-\\ln T(x)\\right)} \\, dx. \\end{gathered}",
+    "answerKey": "1",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\log_{2026}\\left(e^{2026+x}\\right) dx",
+    "answerKey": "\\frac{x(x+4052)}{2\\ln 2026} + C",
+    "difficulty": 2,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\pi}^{\\pi} \\bigl|\\sin|x|+\\cos|x|\\bigr| \\, dx",
+    "answerKey": "4\\sqrt{2}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\infty} \\frac{dx}{x^{2028}+x^{2026}+x^2+1}",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_e^{e^e} \\frac{dx}{x\\ln x\\left(1+(\\ln\\ln x)^2\\right)}",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{dx}{\\sqrt{e^x-1}}",
+    "answerKey": "2\\arctan\\sqrt{e^x-1} + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^{e^3} \\{\\ln x\\} \\, dx \\quad (\\{\\cdot\\} = \\text{fractional part})",
+    "answerKey": "1+e+e^2",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{\\sqrt{2}}^{2} \\frac{dx}{x\\sqrt{x^2-1}\\,\\operatorname{arcsec} x}",
+    "answerKey": "\\ln\\frac{4}{3}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi} \\frac{dx}{2024-\\cos x}",
+    "answerKey": "\\frac{\\pi}{\\sqrt{2025 \\cdot 2023}}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\iint_{x^2+y^2\\le 4} \\lfloor x^2+y^2 \\rfloor \\, dA",
+    "answerKey": "6\\pi",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int e^x\\left(\\tan x+\\sec^2 x\\right) dx",
+    "answerKey": "e^x\\tan x + C",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sin^2 x}{\\sqrt{1-\\cos x}} \\, dx",
+    "answerKey": "-\\frac{4\\sqrt{2}}{3}\\cos^3\\left(\\frac{x}{2}\\right) + C \\quad \\left(\\text{where } \\sin\\frac{x}{2} > 0\\right)",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{xe^{x^2}}{e^{2x^2}+2e^{x^2}-3} \\, dx",
+    "answerKey": "\\frac{1}{8}\\ln\\left|\\frac{e^{x^2}-1}{e^{x^2}+3}\\right| + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\sqrt{2}-1}{2}} \\frac{dx}{(2x+1)\\sqrt{x^2+x}}",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi/4} \\frac{\\cos x \\, dx}{(\\sin x+\\cos x)(\\sin x+2\\cos x)(\\sin x+3\\cos x)}",
+    "answerKey": "\\frac{1}{2}\\ln\\frac{32}{27}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\infty} \\frac{e^{-yx}-e^{-2x}}{x} \\, dx, \\quad y > 0",
+    "answerKey": "\\ln\\frac{2}{y}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^9 \\frac{(10-\\lfloor x\\rfloor)-(\\lfloor x\\rfloor+1)}{\\lfloor x\\rfloor+1}\\binom{10}{\\lfloor x\\rfloor} \\, dx",
+    "answerKey": "9",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt{x^2+8x} \\, dx",
+    "answerKey": "\\frac{(x+4)\\sqrt{x^2+8x}}{2} - 8\\ln\\left|x+4+\\sqrt{x^2+8x}\\right| + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi/2} \\frac{\\cos x}{2-\\sin 2x} \\, dx",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\left\\lfloor \\frac{1}{x} \\right\\rfloor x \\, dx",
+    "answerKey": "\\frac{\\pi^2}{12}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\infty} \\frac{\\ln x}{(1+x^2)^2} \\, dx",
+    "answerKey": "-\\frac{\\pi}{4}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\frac{dx}{x^2\\lfloor 1/x\\rfloor\\lceil 1/x\\rceil^2}",
+    "answerKey": "2-\\frac{\\pi^2}{6}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\sum_{n=1}^{\\infty} \\frac{x^n}{n} \\, dx",
+    "answerKey": "1",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\sqrt{\\tan x}+\\sqrt{\\cot x}\\right) dx",
+    "answerKey": "\\sqrt{2}\\arcsin(\\sin x-\\cos x) + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} \\sin x \\, \\sin 2x \\, \\sin 3x \\, \\sin 4x \\, dx",
+    "answerKey": "\\frac{\\pi}{16}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1-\\ln x}{x^2+\\ln^2 x} \\, dx",
+    "answerKey": "\\arctan\\left(\\frac{\\ln x}{x}\\right) + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\infty} e^{-\\lfloor x\\rfloor} \\, dx",
+    "answerKey": "\\frac{e}{e-1}",
+    "difficulty": 3,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\sin x+\\tan x} \\, dx",
+    "answerKey": "\\frac{1}{2}\\ln\\left|\\tan\\frac{x}{2}\\right| - \\frac{1}{4}\\tan^2\\frac{x}{2} + C",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} \\lfloor 2\\sin x\\rfloor \\, dx",
+    "answerKey": "-\\pi",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\text{Let } g \\text{ be the inverse of } f(x) = x^3+x. \\text{ Evaluate } \\int_0^2 g(x) \\, dx.",
+    "answerKey": "\\frac{5}{4}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi} \\frac{x}{1+\\sin x} \\, dx",
+    "answerKey": "\\pi",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x^2-1}{x\\sqrt{x^4+3x^2+1}} \\, dx, \\quad x > 0",
+    "answerKey": "\\sinh^{-1}\\left(x+\\frac{1}{x}\\right) + C",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\frac{x^4+1}{x^6+1} \\, dx",
+    "answerKey": "\\frac{\\pi}{3}",
+    "difficulty": 4,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{\\pi}{2}} x\\cot x \\, dx",
+    "answerKey": "\\frac{\\pi}{2}\\ln 2",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\infty}^{\\infty} \\frac{\\cosh x}{\\cosh 2x} \\, dx",
+    "answerKey": "\\frac{\\pi}{\\sqrt{2}}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\frac{\\ln x}{1-x} \\, dx",
+    "answerKey": "-\\frac{\\pi^2}{6}",
+    "difficulty": 5,
+    "tags": [
+      "UT Austin Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1+\\cos x}{x+\\sin x} \\, dx",
+    "answerKey": "\\ln(x+\\sin x) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^{\\sqrt{3}} \\frac{\\arctan x+\\operatorname{arccot} x}{x} \\, dx",
+    "answerKey": "\\frac{\\pi}{4}\\ln(3)",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2022} x^2-\\lfloor x\\rfloor\\lceil x\\rceil \\, dx",
+    "answerKey": "674",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sinh(x)}{\\cosh(x)-\\sinh(x)} \\, dx",
+    "answerKey": "-\\frac{1}{2}x+\\frac{1}{4}e^{2x} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x}{\\sqrt{x-1}+\\sqrt{x+1}} \\, dx",
+    "answerKey": "\\frac{(x+1)^{\\frac{5}{2}}}{5}-\\frac{(x+1)^{\\frac{3}{2}}}{3}-\\frac{(x-1)^{\\frac{5}{2}}}{5}-\\frac{(x-1)^{\\frac{3}{2}}}{3} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi} \\cos(x+\\cos x) \\, dx",
+    "answerKey": "0",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int x^3\\sin(x^2) \\, dx",
+    "answerKey": "\\frac{\\sin(x^2)-x^2\\cos(x^2)}{2} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x}{1-x^4} \\, dx",
+    "answerKey": "\\frac{1}{4}\\ln\\left(\\frac{1+x^2}{1-x^2}\\right) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\cosh^2 x} \\, dx",
+    "answerKey": "\\tanh(x) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 e^{e^x}-e^{e^x-x} \\, dx",
+    "answerKey": "e^{e-1}-e",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\lim_{n\\to\\infty} \\int_0^3 \\underbrace{\\sin\\left(\\frac{\\pi}{3}\\sin\\left(\\frac{\\pi}{3}\\sin\\left(\\cdots\\sin\\left(\\frac{\\pi}{3}x\\right)\\cdots\\right)\\right)\\right)}_{n \\ \\sin\\text{'s}} \\, dx",
+    "answerKey": "\\frac{3}{2}",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\sqrt{1-\\sqrt{x}} \\, dx",
+    "answerKey": "\\frac{8}{15}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x^3}{1+x+\\frac{x^2}{2}+\\frac{x^3}{6}} \\, dx",
+    "answerKey": "6\\left(x-\\ln\\left(1+x+\\frac{x^2}{2}+\\frac{x^3}{6}\\right)\\right) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sin(x+\\sin(x))-\\sin(x-\\sin(x)) \\, dx",
+    "answerKey": "-2\\cos(\\sin(x)) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\tan^4(x)\\sec^3(x)+\\tan^2(x)\\sec^5(x) \\, dx",
+    "answerKey": "\\frac{1}{3}\\tan^3(x)\\sec^3(x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (1+\\ln x)\\ln\\ln x \\, dx",
+    "answerKey": "x\\ln x\\ln\\ln x-x + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{1+\\sin x}+\\frac{1}{1+\\cos x}+\\frac{1}{1+\\tan x}+\\frac{1}{1+\\cot x}+\\frac{1}{1+\\sec x}+\\frac{1}{1+\\csc x} \\, dx",
+    "answerKey": "3x + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{\\sqrt{x-x^2}} \\, dx",
+    "answerKey": "2\\arcsin(\\sqrt{x}) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\frac{1}{2}} \\sum_{n=0}^{\\infty} \\binom{n+3}{n}x^n \\, dx",
+    "answerKey": "\\frac{7}{3}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1}{1+\\cos^2 x} \\, dx",
+    "answerKey": "\\frac{1}{\\sqrt{2}}\\arctan\\left(\\frac{\\tan(x)}{\\sqrt{2}}\\right) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int x^{\\frac{1}{\\ln x}} \\, dx",
+    "answerKey": "ex + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\operatorname{sech}(x) \\, dx",
+    "answerKey": "2\\arctan(e^x) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{e^x}{(1+e^x)\\ln(1+e^x)} \\, dx",
+    "answerKey": "\\ln(\\ln(1+e^x)) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (1+x+x^2+x^3+x^4)(1-x+x^2-x^3+x^4) \\, dx",
+    "answerKey": "x+\\frac{x^3}{3}+\\frac{x^5}{5}+\\frac{x^7}{7}+\\frac{x^9}{9} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^4 \\binom{x}{5} \\, dx",
+    "answerKey": "0",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (x+\\sin(x)+x\\cos(x)+\\sin(x)\\cos(x)) \\, dx",
+    "answerKey": "\\frac{(x+\\sin(x))^2}{2} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\sin^2(x)+\\cos^2(x)+\\tan^2(x)+\\cot^2(x)+\\sec^2(x)+\\csc^2(x)\\right) dx",
+    "answerKey": "2\\tan(x)-2\\cot(x)-x + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} \\lfloor 2023\\sin(x)\\rfloor \\, dx",
+    "answerKey": "-\\pi",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (2\\ln x+1)e^{(\\ln x)^2} \\, dx",
+    "answerKey": "xe^{(\\ln x)^2} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left((1-x)^3+(x-x^2)^3+(x^2-1)^3-3(1-x)(x-x^2)(x^2-1)\\right) dx",
+    "answerKey": "C \\quad (\\text{the integrand is identically } 0)",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-2023}^{2023} \\underbrace{|||||x|-1|-1|\\cdots|-1|}_{2023 \\ (-1)\\text{'s}} \\, dx",
+    "answerKey": "2023",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (\\sin^6 x+\\cos^6 x+3\\sin^2 x\\cos^2 x) \\, dx",
+    "answerKey": "x + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (x+e+1)x^e e^x \\, dx",
+    "answerKey": "x^{e+1}e^x + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\left(\\frac{x^2}{2-x^2}+\\sqrt{\\frac{2x}{x+1}}\\right) dx",
+    "answerKey": "1",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{1+2x^{2022}}{x+x^{2023}} \\, dx",
+    "answerKey": "\\frac{1}{2022}\\ln(x^{2022}+x^{4044}) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (3\\sin(20x)\\cos(23x)+20\\sin(43x)) \\, dx",
+    "answerKey": "\\sin(20x)\\sin(23x) + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\prod_{k=0}^{\\infty}\\left(\\frac{1}{1+x^{2^k}}\\right) dx",
+    "answerKey": "\\frac{1}{2}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sin x}{2e^x+\\cos x+\\sin x} \\, dx",
+    "answerKey": "\\frac{x-\\ln(2e^x+\\cos x+\\sin x)}{2} + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln(x/\\pi)}{(\\ln x)^{\\ln(\\pi e)}} \\, dx",
+    "answerKey": "\\frac{x}{(\\ln x)^{\\ln\\pi}} + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-3/2}^{-1/2} (x^5+5x^4+10x^3+8x^2+x) \\, dx",
+    "answerKey": "\\frac{5}{6}",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{2023}^{2025} 2024 \\, dx",
+    "answerKey": "4048",
+    "difficulty": 1,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{(x-1)^{\\ln(x+1)}}{(x+1)^{\\ln(x-1)}} \\, dx",
+    "answerKey": "x + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (x\\ln x+2x) \\, dx",
+    "answerKey": "\\frac{1}{2}x^2\\ln x+\\frac{3}{4}x^2 + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{dx}{x\\ln x+2x}",
+    "answerKey": "\\ln(\\ln x+2) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} \\arccos(\\sin x) \\, dx",
+    "answerKey": "\\pi^2",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\cos x+\\cot x+\\csc x+1}{\\sin x+\\tan x+\\sec x+1} \\, dx",
+    "answerKey": "\\ln(\\sin x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x^{2024}-1}{x^{506}-1} \\, dx",
+    "answerKey": "x+\\frac{x^{507}}{507}+\\frac{x^{1013}}{1013}+\\frac{x^{1519}}{1519} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} (5x^3-3x)^2 \\, dx",
+    "answerKey": "\\frac{8}{7}",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} (\\sin x+\\cos x)^{11} \\, dx",
+    "answerKey": "0",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} (\\sinh x+\\cosh x)^{11} \\, dx",
+    "answerKey": "\\frac{e^{22\\pi}-1}{11}",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\csc^2(x)\\tan^{2024}(x) \\, dx",
+    "answerKey": "\\frac{\\tan^{2023}(x)}{2023} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\cos^x(x)(\\ln(\\cos x)-x\\tan x) \\, dx",
+    "answerKey": "\\cos^x(x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\infty}^{\\infty} e^{-(x-2024)^2/4} \\, dx",
+    "answerKey": "2\\sqrt{\\pi}",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{1/e}^{e} \\left(1-\\frac{1}{x^2}\\right)e^{e^{x+1/x}} \\, dx",
+    "answerKey": "0",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (x+1-e^{-x})e^{xe^x} \\, dx",
+    "answerKey": "e^{(e^x-1)x} + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\frac{\\arctan(x)}{1-x^2}+\\frac{\\operatorname{arctanh}(x)}{1+x^2}\\right) dx",
+    "answerKey": "\\arctan(x)\\operatorname{arctanh}(x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\sum_{k=0}^{\\infty}\\sin\\left(\\frac{k\\pi}{2}\\right)x^k\\right) dx",
+    "answerKey": "\\frac{\\ln(x^2+1)}{2} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\left(\\sum_{n=0}^{2024} x^{2^{n-1012}}\\right) dx",
+    "answerKey": "\\frac{2025}{2}",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x^4}{3-6x+6x^2-4x^3+2x^4} \\, dx",
+    "answerKey": "\\frac{x}{2}+\\frac{1}{4}\\ln(3-6x+6x^2-4x^3+2x^4) + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^3 \\frac{x+\\frac{x+\\cdots}{1+\\cdots}}{1+\\frac{x+\\cdots}{1+\\cdots}} \\, dx",
+    "answerKey": "2\\sqrt{3}-\\frac{2}{3}",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x+\\sqrt{x}}{1+\\sqrt{x}} \\, dx",
+    "answerKey": "\\frac{2}{3}x^{3/2} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{e^{x+1}}{e^x+1} \\, dx",
+    "answerKey": "e\\ln(e^x+1) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt[3]{3\\sin(x)-\\sin(3x)} \\, dx",
+    "answerKey": "-\\sqrt[3]{4}\\cos(x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^{e^e} \\frac{\\ln\\left(x^{\\ln(x^x)}\\right)}{x^2} \\, dx",
+    "answerKey": "\\frac{e^3}{3}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\pi/2}^{\\pi/2} \\cos(20x)\\sin(25x) \\, dx",
+    "answerKey": "0",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2\\pi} \\sin(x)\\cos(x)\\tan(x)\\cot(x)\\sec(x)\\csc(x) \\, dx",
+    "answerKey": "2\\pi",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{x\\ln(x)\\cos(x)-\\sin(x)}{x\\ln^2(x)} \\, dx",
+    "answerKey": "\\frac{\\sin(x)}{\\ln(x)} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_1^2 (2^{x-1}+\\log_2(2x)) \\, dx",
+    "answerKey": "3",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 x^{2024}(1-x^{2025})^{2025} \\, dx",
+    "answerKey": "\\frac{1}{2025 \\cdot 2026}",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{10} x\\left(x-\\frac{1}{2}\\right)(x-1) \\, dx",
+    "answerKey": "2025",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{20} \\left\\lceil\\frac{\\lfloor x\\rfloor}{2}\\right\\rceil dx",
+    "answerKey": "100",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt[3/1]{x\\sqrt[4/2]{x\\sqrt[5/3]{x\\sqrt[6/4]{\\cdots}}}} \\, dx",
+    "answerKey": "\\frac{x^2}{2} + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{e^{2x}(x^2+x)}{(xe^x)^4+1} \\, dx",
+    "answerKey": "\\frac{1}{2}\\arctan(x^2e^{2x}) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\sec^4(x)-\\tan^4(x)\\right) dx",
+    "answerKey": "2\\tan(x)-x + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\sqrt{x(1-x)} \\, dx",
+    "answerKey": "\\frac{\\pi}{8}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\sin(4x)\\cos(x)}{\\cos(2x)\\sin(x)} \\, dx",
+    "answerKey": "2x+\\sin(2x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sin(x)\\sinh(x) \\, dx",
+    "answerKey": "\\frac{1}{2}(\\sin(x)\\cosh(x)-\\cos(x)\\sinh(x)) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi/3} \\sin(x)\\cos\\left(\\frac{\\pi}{3}-x\\right) dx",
+    "answerKey": "\\frac{\\pi}{4\\sqrt{3}}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\cos(x)+\\cos\\left(x+\\frac{2\\pi}{3}\\right)+\\cos\\left(x-\\frac{2\\pi}{3}\\right)\\right)^2 dx",
+    "answerKey": "C \\quad (\\text{the integrand is identically } 0)",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\left(\\sum_{k=1}^{\\infty}(-1)^k x^{2k}\\right) dx",
+    "answerKey": "\\frac{\\pi}{4}-1",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\pi}^{\\pi} \\sin^{2025}(x)\\cos^{2026}(x) \\, dx",
+    "answerKey": "0",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int e^{2026e^x+x} \\, dx",
+    "answerKey": "\\frac{e^{2026e^x}}{2026} + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{2026} \\left\\{\\frac{\\lfloor x\\rfloor}{3}\\right\\} dx",
+    "answerKey": "675",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} \\underbrace{|x+|x+|\\cdots+|x+|x||\\cdots|||}_{2026 \\ x\\text{'s}} \\, dx",
+    "answerKey": "1013",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{dx}{\\sqrt{x+1}-\\sqrt{x-1}}",
+    "answerKey": "\\frac{1}{3}\\left((x+1)^{3/2}+(x-1)^{3/2}\\right) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt{1+\\cosh(x)} \\, dx",
+    "answerKey": "2\\sqrt{2}\\sinh(x/2) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{2^{\\ln(x)}}{x^2} \\, dx",
+    "answerKey": "\\frac{x^{\\ln(2)-1}}{\\ln(2)-1} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{1/2} \\left(\\sum_{n=2}^{\\infty} x^n\\right) dx",
+    "answerKey": "\\ln(2)-\\frac{5}{8}",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int x^2\\sin(x) \\, dx",
+    "answerKey": "2x\\sin(x)-(x^2-2)\\cos(x) + C",
+    "difficulty": 2,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{(x-1)^2}{2e^x+x^2+1} \\, dx",
+    "answerKey": "x-\\ln(2e^x+x^2+1) + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-1}^{1} \\max\\left(0,\\sqrt{1-x^2}-\\frac{1}{2}\\right) dx",
+    "answerKey": "\\frac{\\pi}{3}-\\frac{\\sqrt{3}}{4}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^1 \\sqrt{x^2+x+\\sqrt{x^2+x+\\sqrt{\\cdots}}} \\, dx",
+    "answerKey": "\\frac{3}{2}",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int (\\cos^5(x)-10\\cos^3(x)\\sin^2(x)+5\\cos(x)\\sin^4(x)) \\, dx",
+    "answerKey": "\\frac{1}{5}\\sin(5x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\arctan(\\sqrt{x}) \\, dx",
+    "answerKey": "(x+1)\\arctan(\\sqrt{x})-\\sqrt{x} + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{1000} (\\lfloor\\lceil x\\rceil\\rfloor+\\lceil\\lfloor x\\rfloor\\rceil+\\lfloor\\{x\\}\\rfloor+\\{\\lfloor x\\rfloor\\}+\\lceil\\{x\\}\\rceil+\\{\\lceil x\\rceil\\}) \\, dx",
+    "answerKey": "1001000",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\sqrt{\\frac{\\cos(x)\\cot(x)\\csc(x)}{\\sin(x)\\tan(x)\\sec(x)}} \\, dx",
+    "answerKey": "-x-\\cot(x) + C",
+    "difficulty": 3,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_{-\\infty}^{\\infty} \\frac{e^{-x^2}}{1+e^{2x}} \\, dx",
+    "answerKey": "\\frac{\\sqrt{\\pi}}{2}",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\left(\\frac{\\sin^2(x)}{x^2}-\\frac{\\sin(2x)}{x}\\right) dx",
+    "answerKey": "-\\frac{\\sin^2(x)}{x} + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int \\frac{\\ln(\\ln(x))\\ln(\\ln(\\ln(x)))}{x\\ln(x)} \\, dx",
+    "answerKey": "\\frac{1}{4}\\ln(\\ln(x))^2\\left(2\\ln(\\ln(\\ln(x)))-1\\right) + C",
+    "difficulty": 4,
+    "tags": [
+      "MIT Integration Bee"
+    ]
+  },
+  {
+    "latex": "\\int_0^{\\pi/2} \\cos^2\\left(\\frac{\\pi}{2}\\cos^2\\left(\\frac{\\pi}{2}\\cos^2(x)\\right)\\right) dx",
+    "answerKey": "\\frac{\\pi}{4}",
+    "difficulty": 5,
+    "tags": [
+      "MIT Integration Bee"
     ]
   }
 ]

@@ -71,7 +71,7 @@ function FilteredList({
           </select>
         </label>
         <label className="flex items-center gap-2">
-          <span className="text-muted">Technique</span>
+          <span className="text-muted">Tag</span>
           <select
             className="field"
             value={filters.tag ?? ""}

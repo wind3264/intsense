@@ -13,7 +13,8 @@ describe("problems.json", () => {
   it.each(problems.map((p, i) => [i + 1, p] as const))("problem %i is well-formed", (_, p) => {
     expect(() => render(p.latex)).not.toThrow();
     expect(() => render(p.answerKey)).not.toThrow();
-    expect(p.latex.startsWith("\\int")).toBe(true);
+    // Not startsWith: bee problems can be worded ("Let g be the inverse of ...") or use \iint.
+    expect(p.latex.includes("\\int") || p.latex.includes("\\iint")).toBe(true);
     expect(Number.isInteger(p.difficulty) && p.difficulty >= 1 && p.difficulty <= 5).toBe(true);
   });
 });

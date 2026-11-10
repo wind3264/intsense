@@ -7,12 +7,26 @@ on:
   workflow_dispatch:
 
 env:
-  # Fresh SQLite database, migrated and seeded from prisma/content for every run.
-  DATABASE_URL: file:./ci.db
+  # Fresh Postgres service container, migrated and seeded from prisma/content for every run.
+  # The pool cap keeps the build's prerender workers (one Prisma client each) under Postgres' connection limit.
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/intsense?connection_limit=2&pool_timeout=0
 
 jobs:
   check:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: intsense
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -20,7 +34,6 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx prisma generate
       - run: npx prisma migrate deploy
       - run: npx prisma db seed
       - run: npx tsc --noEmit
@@ -34,6 +47,19 @@ jobs:
     needs: check
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: intsense
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     permissions:
       pages: write
       id-token: write
@@ -50,7 +76,6 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx prisma generate
       - run: npx prisma migrate deploy
       - run: npx prisma db seed
       - run: npm run build

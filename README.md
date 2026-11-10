@@ -2,11 +2,12 @@
 
 Practice problems and a technique wiki for integration bees.
 
-Live (static copy): https://wind3264.github.io/intsense/
+Live: https://intsense.vercel.app
 
 ## Features
 
-- **Problems** - 64 integrals, filterable by difficulty (1-5) and technique, rendered with KaTeX.
+- **Problems** - 228 integrals, filterable by difficulty (1-5) and tag, rendered with KaTeX.
+  Tags are techniques or sources (UT Austin Integration Bee 2025-26, MIT Integration Bee qualifiers 2022-26).
 - **Trust-based checking** - work the integral on paper, reveal the answer, and mark it solved yourself.
   Revealing and marking solved are independent.
 - **Accounts** - Google sign-in via Auth.js; solved problems are remembered and shown on the profile page.
@@ -16,7 +17,7 @@ Live (static copy): https://wind3264.github.io/intsense/
 
 ## Stack
 
-Next.js (App Router) + TypeScript, Prisma with SQLite, Auth.js (next-auth v5) with the Prisma adapter, Tailwind CSS, KaTeX, Vitest.
+Next.js (App Router) + TypeScript, Prisma with PostgreSQL, Auth.js (next-auth v5) with the Prisma adapter, Tailwind CSS, KaTeX, Vitest.
 
 ## Two builds
 
@@ -37,8 +38,9 @@ The static build drops the API route handlers entirely (see `next.config.ts`), s
 ## Running locally
 
 ```bash
+docker run --name intsense-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=intsense -p 5432:5432 -d postgres:17
 npm install
-npx prisma migrate dev   # creates prisma/dev.db
+npx prisma migrate dev   # applies prisma/migrations
 npx prisma db seed       # loads prisma/content (safe to re-run)
 npm run dev
 ```
@@ -46,13 +48,22 @@ npm run dev
 `.env` needs:
 
 ```
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/intsense?connection_limit=2&pool_timeout=0"
 AUTH_SECRET=...          # npx auth secret
 AUTH_GOOGLE_ID=...
 AUTH_GOOGLE_SECRET=...
 ```
 
+`connection_limit` matters for `npm run build`: pages are prerendered by one worker process per CPU core, each with its own Prisma connection pool, and the default pool size would exhaust Postgres' 100 connections.
+
 Google sign-in only works on origins whose redirect URI (`<origin>/api/auth/callback/google`) is registered in the Google Cloud console.
+
+## Deployment
+
+The server build is hosted on Vercel, with a Neon Postgres database installed through the Vercel Marketplace.
+`vercel.json` makes every deploy apply pending migrations and re-seed `prisma/content` before `next build`, so content changes go live with a deploy.
+Migrations use Neon's direct connection (`DATABASE_URL_UNPOOLED`); the app itself uses the pooled `DATABASE_URL`.
+The Vercel project needs `AUTH_SECRET`, `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`; the database variables are set by the integration.
 
 ## Content
 
