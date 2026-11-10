@@ -6,7 +6,6 @@ import { Solutions } from "@/components/Solutions";
 import { TeX } from "@/components/TeX";
 import { getProblem, getProblemIds } from "@/lib/content";
 import { parseId } from "@/lib/ids";
-import { STATIC_EXPORT } from "@/lib/mode";
 import { listSolutions } from "@/lib/solutions";
 
 type Props = { params: Promise<{ id: string }> };
@@ -59,8 +58,7 @@ export default async function ProblemPage({ params }: Props) {
         <TeX math={problem.latex} display />
       </div>
 
-      {/* Only the static build embeds the answer; the server build hands it out via the API. */}
-      <ProblemActions problemId={problem.id} answerKey={STATIC_EXPORT ? problem.answerKey : undefined} />
+      <ProblemActions problemId={problem.id} />
 
       <Solutions problemId={problem.id} initial={solutions} />
 

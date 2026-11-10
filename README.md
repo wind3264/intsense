@@ -6,34 +6,22 @@ Live: https://intsense.vercel.app
 
 ## Features
 
-- **Problems** - 228 integrals, filterable by difficulty (1-5) and tag, rendered with KaTeX.
+- **Practice** - the landing page serves one random problem at a time for a chosen difficulty range and set of tags.
+  Problems you have solved or already been served do not come back until every match is used up.
+  The answer and posted solutions sit in a drop-down under the problem.
+- **All Problems** - 228 integrals rendered with KaTeX, filterable by difficulty (1-5) and one or more tags, searchable by LaTeX or problem number, and sortable by difficulty.
   Tags are techniques or sources (UT Austin Integration Bee 2025-26, MIT Integration Bee qualifiers 2022-26).
 - **Trust-based checking** - work the integral on paper, reveal the answer, and mark it solved yourself.
-  Revealing and marking solved are independent.
-- **Accounts** - Google sign-in via Auth.js; solved problems are remembered and shown on the profile page.
-- **Solutions** - users post Markdown + LaTeX write-ups under each problem, with one upvote per user.
+  Anyone can reveal an answer; marking solved needs an account, and the two are independent.
+- **Accounts** - Google sign-in via Auth.js; solved problems are remembered.
+- **Profiles** - every user has a public profile with their progress, solve history and posted solutions.
+- **Solutions** - users post Markdown + LaTeX write-ups under each problem, with one upvote per user, and can delete their own.
   Solutions are collapsed by default since they give the answer away.
 - **Wiki** - one page per technique, each linked to its practice problems.
 
 ## Stack
 
 Next.js (App Router) + TypeScript, Prisma with PostgreSQL, Auth.js (next-auth v5) with the Prisma adapter, Tailwind CSS, KaTeX, Vitest.
-
-## Two builds
-
-The same code builds two ways:
-
-| | Server build | Static build (GitHub Pages) |
-| --- | --- | --- |
-| Command | `npm run build` | `STATIC_EXPORT=1 BASE_PATH=/intsense npm run build` |
-| Accounts | Google sign-in | none |
-| Progress | `Solve` rows in the database | `localStorage` |
-| Answers | `GET /api/problems/:id/check` (signed in) | embedded in the page |
-| Solutions | read, post, upvote | read-only |
-
-Pages always read problems and wiki content from the database at build time.
-Per-user features go through `lib/user-data.ts`, which calls the API routes in the server build and uses the browser in the static build.
-The static build drops the API route handlers entirely (see `next.config.ts`), since GitHub Pages cannot run them.
 
 ## Running locally
 
@@ -60,10 +48,12 @@ Google sign-in only works on origins whose redirect URI (`<origin>/api/auth/call
 
 ## Deployment
 
-The server build is hosted on Vercel, with a Neon Postgres database installed through the Vercel Marketplace.
+The site is hosted on Vercel, with a Neon Postgres database installed through the Vercel Marketplace.
 `vercel.json` makes every deploy apply pending migrations and re-seed `prisma/content` before `next build`, so content changes go live with a deploy.
 Migrations use Neon's direct connection (`DATABASE_URL_UNPOOLED`); the app itself uses the pooled `DATABASE_URL`.
 The Vercel project needs `AUTH_SECRET`, `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`; the database variables are set by the integration.
+
+Pages read problems and wiki content from the database at build time; everything per-user goes through the API routes (`lib/user-data.ts`).
 
 ## Content
 
@@ -76,15 +66,18 @@ Problem ids are positions in `problems.json`, so only ever append to it.
 | Route | Auth | |
 | --- | --- | --- |
 | `GET /api/problems?difficulty=&tags=` | - | list/filter problems (no answers) |
-| `GET /api/problems/:id/check` | yes | reveal the answer |
+| `GET /api/problems/:id/check` | - | reveal the answer |
 | `POST`/`DELETE /api/problems/:id/check` | yes | mark / unmark solved |
 | `GET /api/me/solves` | yes | the user's solves |
 | `GET`/`POST /api/problems/:id/solutions` | `POST` only | list / post solutions |
+| `DELETE /api/solutions/:id` | yes (author) | delete a solution |
 | `POST`/`DELETE /api/solutions/:id/vote` | yes | upvote / withdraw |
+| `GET /api/users/:id` | - | a user's public profile |
 | `GET /api/wiki`, `GET /api/wiki/:slug` | - | technique pages |
 
-Sign-ups, reveals, solves and posted solutions are logged as one-line JSON events (`lib/log.ts`).
+Sign-ups, reveals, solves and posted or deleted solutions are logged as one-line JSON events (`lib/log.ts`).
 
 ## CI/CD
 
-`.github/workflows/ci.yml` type-checks, lints, tests and builds on every push and pull request against a freshly seeded database, then deploys the static build to GitHub Pages from `main`.
+`.github/workflows/ci.yml` type-checks, lints, tests and builds on every push and pull request against a freshly seeded database.
+Vercel deploys `main` on push.

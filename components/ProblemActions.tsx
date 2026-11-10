@@ -3,13 +3,15 @@
 import { useState } from "react";
 import { TeX } from "@/components/TeX";
 import { SignInPrompt } from "@/components/SignInPrompt";
-import { canTrack, useUser } from "@/lib/use-user";
+import { useUser } from "@/lib/use-user";
 import { useSolves } from "@/lib/use-solves";
 import { fetchAnswer, setSolved } from "@/lib/user-data";
 
 // Reveal and mark-solved are deliberately independent: the user checks their own
-// work against the answer and reports the result themselves.
-export function ProblemActions({ problemId, answerKey }: { problemId: number; answerKey?: string }) {
+// work against the answer and reports the result themselves. Anyone can reveal;
+// marking solved needs an account. The practice page reveals answers in its own
+// drop-down, so it passes `reveal={false}`.
+export function ProblemActions({ problemId, reveal = true }: { problemId: number; reveal?: boolean }) {
   const user = useUser();
   const solves = useSolves();
   const [answer, setAnswer] = useState<string | null>(null);
@@ -17,12 +19,8 @@ export function ProblemActions({ problemId, answerKey }: { problemId: number; an
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  if (user.status === "signed-out") {
-    return <SignInPrompt>Sign in to reveal the answer and keep track of what you&apos;ve solved.</SignInPrompt>;
-  }
-
   const solved = solvedOverride ?? solves?.some((s) => s.problemId === problemId) ?? null;
-  const ready = canTrack(user) && solved !== null && !pending;
+  const ready = user.status === "signed-in" && solved !== null && !pending;
 
   async function run(action: () => Promise<void>) {
     setPending(true);
@@ -39,14 +37,18 @@ export function ProblemActions({ problemId, answerKey }: { problemId: number; an
   return (
     <div className="font-sans text-sm">
       <div className="flex flex-wrap items-center gap-3">
-        <button
-          className="btn"
-          disabled={!canTrack(user) || pending || answer !== null}
-          onClick={() => run(async () => setAnswer(answerKey ?? (await fetchAnswer(problemId))))}
-        >
-          Reveal answer
-        </button>
-        {solved ? (
+        {reveal && (
+          <button
+            className="btn"
+            disabled={pending || answer !== null}
+            onClick={() => run(async () => setAnswer(await fetchAnswer(problemId)))}
+          >
+            Reveal answer
+          </button>
+        )}
+        {user.status === "signed-out" ? (
+          <SignInPrompt>Sign in to keep track of what you&apos;ve solved.</SignInPrompt>
+        ) : solved ? (
           <span className="flex items-center gap-3">
             <span className="text-accent">✓ Solved</span>
             <button

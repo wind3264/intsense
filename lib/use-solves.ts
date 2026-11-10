@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { canTrack, useUser } from "@/lib/use-user";
+import { useUser } from "@/lib/use-user";
 import { fetchSolves, type Solve } from "@/lib/user-data";
 
 // The current user's solves, or null until known (or when signed out).
 export function useSolves(): Solve[] | null {
     const user = useUser();
-    const tracking = canTrack(user);
+    const signedIn = user.status === "signed-in";
     const [solves, setSolves] = useState<Solve[] | null>(null);
 
     useEffect(() => {
-        if (!tracking) return;
+        if (!signedIn) return;
         let cancelled = false;
         fetchSolves()
             .then((s) => !cancelled && setSolves(s))
@@ -19,7 +19,7 @@ export function useSolves(): Solve[] | null {
         return () => {
             cancelled = true;
         };
-    }, [tracking]);
+    }, [signedIn]);
 
-    return tracking ? solves : null;
+    return signedIn ? solves : null;
 }

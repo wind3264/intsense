@@ -6,9 +6,11 @@ import { signIn, signOut } from "next-auth/react";
 import { useUser } from "@/lib/use-user";
 
 const links = [
-  { href: "/", label: "Problems", active: (p: string) => p === "/" || p.startsWith("/problems") },
+  { href: "/", label: "Practice", active: (p: string) => p === "/" },
+  { href: "/problems", label: "All Problems", active: (p: string) => p.startsWith("/problems") },
   { href: "/wiki", label: "Wiki", active: (p: string) => p.startsWith("/wiki") },
   { href: "/profile", label: "Profile", active: (p: string) => p.startsWith("/profile") },
+  { href: "/about", label: "About", active: (p: string) => p.startsWith("/about") },
 ];
 
 export function Nav() {

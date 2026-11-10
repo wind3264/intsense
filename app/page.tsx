@@ -1,4 +1,4 @@
-import { ProblemList } from "@/components/ProblemList";
+import { Practice } from "@/components/Practice";
 import { TeX } from "@/components/TeX";
 import { getProblems, getTagNames } from "@/lib/content";
 
@@ -7,14 +7,8 @@ export default async function Home() {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight">Problems</h1>
-      <p className="mt-2 mb-8 text-muted">
-        Practice for integration bees. Work each integral on paper, then reveal the answer and mark it solved.
-      </p>
-      <ProblemList
-        items={problems.map((p) => ({ ...p, math: <TeX math={`\\displaystyle ${p.latex}`} /> }))}
-        tags={tags}
-      />
+      <h1 className="mb-8 text-2xl font-semibold tracking-tight">Practice</h1>
+      <Practice items={problems.map((p) => ({ ...p, math: <TeX math={p.latex} display /> }))} tags={tags} />
     </>
   );
 }

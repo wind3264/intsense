@@ -9,10 +9,7 @@ export default async function WikiIndex() {
 
   return (
     <>
-      <h1 className="text-2xl font-semibold tracking-tight">Techniques</h1>
-      <p className="mt-2 mb-8 text-muted">
-        The standard toolkit for integration bees, each with a worked example and practice problems.
-      </p>
+      <h1 className="mb-8 text-2xl font-semibold tracking-tight">Techniques</h1>
       <ul className="border-t border-border">
         {pages.map((p) => (
           <li key={p.slug} className="border-b border-border">

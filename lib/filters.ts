@@ -1,11 +1,30 @@
-export type ProblemFilters = { difficulty?: number; tag?: string };
+export type ProblemFilters = { difficulty?: number; tags?: string[]; query?: string };
 
-// Same semantics as GET /api/problems: exact difficulty, and the problem carries the tag.
-export function filterProblems<T extends { difficulty: number; tags: string[] }>(
+// Makes LaTeX searchable the way people type it: case, spacing, backslashes and braces
+// don't matter, so "ln x" finds "\ln x" and "e^x" finds "e^{x}".
+function normalize(latex: string) {
+  return latex
+    .toLowerCase()
+    .replace(/\\(left|right|,)/g, "")
+    .replace(/[\s\\{}]/g, "");
+}
+
+// Exact difficulty; with tags selected, the problem carries at least one of them.
+// `query` matches the problem number exactly or any part of the LaTeX; a problem whose
+// number is the query is listed first.
+export function filterProblems<T extends { id: number; latex: string; difficulty: number; tags: string[] }>(
   problems: T[],
-  { difficulty, tag }: ProblemFilters,
+  { difficulty, tags, query }: ProblemFilters,
 ): T[] {
-  return problems.filter(
-    (p) => (!difficulty || p.difficulty === difficulty) && (!tag || p.tags.includes(tag)),
+  const text = query?.trim().replace(/^#/, "") ?? "";
+  const needle = normalize(text);
+  const number = /^\d+$/.test(text) ? Number(text) : null;
+
+  const shown = problems.filter(
+    (p) =>
+      (!difficulty || p.difficulty === difficulty) &&
+      (!tags?.length || tags.some((t) => p.tags.includes(t))) &&
+      (!needle || p.id === number || normalize(p.latex).includes(needle)),
   );
+  return number === null ? shown : [...shown.filter((p) => p.id === number), ...shown.filter((p) => p.id !== number)];
 }

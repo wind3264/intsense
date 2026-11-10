@@ -4,12 +4,9 @@ import { auth } from "@/auth";
 import { parseId } from "@/lib/ids";
 import { logEvent } from "@/lib/log";
 
-// Reveals the answer key so the user can check their own work ("unspoil").
+// Reveals the answer key so anyone, signed in or not, can check their own work ("unspoil").
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     const session = await auth();
-    if (!session?.user) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
 
     const id = parseId((await params).id); // id of the problem to unspoil
     const problem = id && await prisma.problem.findUnique({
@@ -18,7 +15,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     if (!problem) {
         return NextResponse.json({ error: "Problem not found" }, { status: 404 });
     }
-    logEvent("reveal", { userId: session.user.id, problemId: problem.id });
+    logEvent("reveal", { userId: session?.user?.id ?? null, problemId: problem.id });
     return NextResponse.json({ answerKey: problem.answerKey });
 }
 

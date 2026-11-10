@@ -30,14 +30,12 @@ export async function getProblem(id: number) {
         where: { id },
         select: {
             ...summarySelect,
-            answerKey: true,
             tags: { select: { tag: { select: { name: true, wikiPages: { select: { slug: true } } } } } },
         },
     });
     if (!problem) return null;
     return {
         ...toSummary(problem),
-        answerKey: problem.answerKey,
         techniques: problem.tags.map((t) => ({ name: t.tag.name, slug: t.tag.wikiPages[0]?.slug ?? null })),
     };
 }

@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, type ReactNode } from "react";
+import { Suspense, useState, type ReactNode } from "react";
+import { Stars } from "@/components/Stars";
+import { TagPicker } from "@/components/TagPicker";
 import type { ProblemSummary } from "@/lib/content";
 import { filterProblems, type ProblemFilters } from "@/lib/filters";
 import { useSolves } from "@/lib/use-solves";
@@ -12,7 +14,8 @@ export type ProblemItem = ProblemSummary & { math: ReactNode };
 
 type Props = { items: ProblemItem[]; tags?: string[] };
 
-// With `tags`, shows difficulty/technique filters kept in the URL (?difficulty=3&tag=Symmetry).
+// With `tags`, shows difficulty/tag filters and a search box, all kept in the URL
+// (?difficulty=3&tag=Symmetry&tag=Partial+Fractions&q=ln).
 export function ProblemList(props: Props) {
   if (!props.tags) return <ProblemTable items={props.items} />;
   // useSearchParams isn't known at build time; prerender the unfiltered list meanwhile.
@@ -29,13 +32,15 @@ function UrlFilteredList(props: Props) {
   const pathname = usePathname();
   const filters: ProblemFilters = {
     difficulty: Number(searchParams.get("difficulty")) || undefined,
-    tag: searchParams.get("tag") ?? undefined,
+    tags: searchParams.getAll("tag"),
+    query: searchParams.get("q") ?? undefined,
   };
 
   function onChange(next: ProblemFilters) {
     const params = new URLSearchParams();
     if (next.difficulty) params.set("difficulty", String(next.difficulty));
-    if (next.tag) params.set("tag", next.tag);
+    for (const tag of next.tags ?? []) params.append("tag", tag);
+    if (next.query) params.set("q", next.query);
     const query = params.toString();
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }
@@ -50,17 +55,19 @@ function FilteredList({
   onChange,
 }: Props & { filters: ProblemFilters; onChange: (f: ProblemFilters) => void }) {
   const difficulties = [...new Set(items.map((p) => p.difficulty))].sort((a, b) => a - b);
-  const shown = filterProblems(items, filters);
+  // The box keeps its own text so typing stays responsive while the URL catches up.
+  const [query, setQuery] = useState(filters.query ?? "");
+  const shown = filterProblems(items, { ...filters, query });
 
   return (
     <>
-      <div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-3 font-sans text-sm">
+      <div className="mb-3 flex flex-wrap items-start gap-x-5 gap-y-3 font-sans text-sm">
         <label className="flex items-center gap-2">
           <span className="text-muted">Difficulty</span>
           <select
             className="field"
             value={filters.difficulty ?? ""}
-            onChange={(e) => onChange({ ...filters, difficulty: Number(e.target.value) || undefined })}
+            onChange={(e) => onChange({ ...filters, query, difficulty: Number(e.target.value) || undefined })}
           >
             <option value="">Any</option>
             {difficulties.map((d) => (
@@ -70,46 +77,68 @@ function FilteredList({
             ))}
           </select>
         </label>
-        <label className="flex items-center gap-2">
-          <span className="text-muted">Tag</span>
-          <select
-            className="field"
-            value={filters.tag ?? ""}
-            onChange={(e) => onChange({ ...filters, tag: e.target.value || undefined })}
-          >
-            <option value="">Any</option>
-            {tags.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </label>
-        <span className="ml-auto text-muted tabular-nums">
+        <div className="flex items-start gap-2">
+          <span className="py-1.5 text-muted">Tags</span>
+          <div className="w-64">
+            <TagPicker
+              tags={tags}
+              selected={filters.tags ?? []}
+              onChange={(selected) => onChange({ ...filters, query, tags: selected })}
+            />
+          </div>
+        </div>
+        <span className="ml-auto py-1.5 text-muted tabular-nums">
           {shown.length} {shown.length === 1 ? "problem" : "problems"}
         </span>
       </div>
+      <input
+        type="search"
+        className="field mb-6 w-full"
+        aria-label="Search problems"
+        placeholder="Search by LaTeX or problem number"
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          onChange({ ...filters, query: e.target.value });
+        }}
+      />
       <ProblemTable items={shown} />
     </>
   );
 }
 
+type Sort = "asc" | "desc" | null;
+
 function ProblemTable({ items }: { items: ProblemItem[] }) {
   const solves = useSolves();
   const solved = new Set(solves?.map((s) => s.problemId));
+  // Clicking the Difficulty heading cycles ascending, descending, then back to the list's own order.
+  const [sort, setSort] = useState<Sort>(null);
 
   if (items.length === 0) {
     return <p className="border-t border-border pt-6 font-sans text-sm text-muted">No problems match these filters.</p>;
   }
 
+  // Array sort is stable, so problems of equal difficulty keep their order.
+  const rows = sort
+    ? [...items].sort((a, b) => (sort === "asc" ? a.difficulty - b.difficulty : b.difficulty - a.difficulty))
+    : items;
+
   return (
     <ol className="border-t border-border">
-      <li className="eyebrow grid grid-cols-[2.75rem_1fr_auto] gap-3 border-b border-border py-2" aria-hidden>
-        <span>No.</span>
-        <span>Integral</span>
-        <span>Difficulty</span>
+      <li className="eyebrow grid grid-cols-[2.75rem_1fr_auto] gap-3 border-b border-border py-2">
+        <span aria-hidden>No.</span>
+        <span aria-hidden>Integral</span>
+        <button
+          className="tracking-wide uppercase transition-colors hover:text-foreground"
+          title="Sort by difficulty"
+          aria-label={`Sort by difficulty${sort === "asc" ? " (ascending)" : sort === "desc" ? " (descending)" : ""}`}
+          onClick={() => setSort(sort === null ? "asc" : sort === "asc" ? "desc" : null)}
+        >
+          Difficulty{sort && <span aria-hidden> {sort === "asc" ? "↑" : "↓"}</span>}
+        </button>
       </li>
-      {items.map((p) => (
+      {rows.map((p) => (
         <li key={p.id} className="border-b border-border">
           <Link
             href={`/problems/${p.id}`}
@@ -126,12 +155,10 @@ function ProblemTable({ items }: { items: ProblemItem[] }) {
             <span className="min-w-0">
               <span className="block overflow-x-auto overflow-y-hidden">{p.math}</span>
               {p.tags.length > 0 && (
-                <span className="mt-0.5 block font-sans text-xs text-muted">{p.tags.join(", ")}</span>
+                <span className="mt-[7px] -mb-[5px] block font-sans text-xs text-muted">{p.tags.join(", ")}</span>
               )}
             </span>
-            <span className="font-sans text-sm text-muted tabular-nums" title={`Difficulty ${p.difficulty} of 5`}>
-              {p.difficulty}
-            </span>
+            <Stars difficulty={p.difficulty} className="font-sans text-sm text-muted" />
           </Link>
         </li>
       ))}
