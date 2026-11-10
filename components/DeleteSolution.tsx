@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { deleteSolution } from "@/lib/user-data";
 
-const linkClass = "underline underline-offset-4 hover:text-foreground disabled:opacity-50";
+const linkClass =
+  "cursor-pointer underline underline-offset-4 hover:text-foreground disabled:cursor-default disabled:opacity-50";
 
 // Two-step delete for the author of a solution: "Delete", then confirm.
 export function DeleteSolution({ solutionId, onDeleted }: { solutionId: number; onDeleted: () => void }) {
