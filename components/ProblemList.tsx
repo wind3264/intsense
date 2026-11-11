@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState, type ReactNode } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { memo, Suspense, useState, type ReactNode } from "react";
 import { DifficultyRange, MAX_DIFFICULTY, MIN_DIFFICULTY } from "@/components/DifficultyRange";
 import { Stars } from "@/components/Stars";
 import { TagPicker } from "@/components/TagPicker";
@@ -29,7 +29,6 @@ export function ProblemList(props: Props) {
 
 function UrlFilteredList(props: Props) {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const pathname = usePathname();
   const filters: ProblemFilters = {
     min: Number(searchParams.get("min")) || undefined,
@@ -45,7 +44,8 @@ function UrlFilteredList(props: Props) {
     for (const tag of next.tags ?? []) params.append("tag", tag);
     if (next.query) params.set("q", next.query);
     const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    // The list filters on the client, so update the URL without a server round trip.
+    window.history.replaceState(null, "", query ? `${pathname}?${query}` : pathname);
   }
 
   return <FilteredList {...props} filters={filters} onChange={onChange} />;
@@ -136,29 +136,36 @@ function ProblemTable({ items }: { items: ProblemItem[] }) {
         </button>
       </li>
       {rows.map((p) => (
-        <li key={p.id} className="border-b border-border">
-          <Link
-            href={`/problems/${p.id}`}
-            className="-mx-3 grid grid-cols-[2.75rem_1fr_auto] items-center gap-3 px-3 py-3 transition-colors hover:bg-subtle"
-          >
-            <span className="font-sans text-sm text-muted tabular-nums">
-              {p.id}
-              {solved.has(p.id) && (
-                <span className="ml-1 text-accent" title="Solved" aria-label="solved">
-                  ✓
-                </span>
-              )}
-            </span>
-            <span className="min-w-0">
-              <span className="block overflow-x-auto overflow-y-hidden">{p.math}</span>
-              {p.tags.length > 0 && (
-                <span className="mt-[7px] -mb-[5px] block font-sans text-xs text-muted">{p.tags.join(", ")}</span>
-              )}
-            </span>
-            <Stars difficulty={p.difficulty} className="font-sans text-sm text-muted" />
-          </Link>
-        </li>
+        <Row key={p.id} problem={p} solved={solved.has(p.id)} />
       ))}
     </ol>
   );
 }
+
+// Memoized so changing a filter re-renders only the rows that appear, not all of them.
+const Row = memo(function Row({ problem: p, solved }: { problem: ProblemItem; solved: boolean }) {
+  return (
+    <li className="border-b border-border">
+      <Link
+        href={`/problems/${p.id}`}
+        className="-mx-3 grid grid-cols-[2.75rem_1fr_auto] items-center gap-3 px-3 py-3 transition-colors hover:bg-subtle"
+      >
+        <span className="font-sans text-sm text-muted tabular-nums">
+          {p.id}
+          {solved && (
+            <span className="ml-1 text-accent" title="Solved" aria-label="solved">
+              ✓
+            </span>
+          )}
+        </span>
+        <span className="min-w-0">
+          <span className="block overflow-x-auto overflow-y-hidden">{p.math}</span>
+          {p.tags.length > 0 && (
+            <span className="mt-[7px] -mb-[5px] block font-sans text-xs text-muted">{p.tags.join(", ")}</span>
+          )}
+        </span>
+        <Stars difficulty={p.difficulty} className="font-sans text-sm text-muted" />
+      </Link>
+    </li>
+  );
+});
