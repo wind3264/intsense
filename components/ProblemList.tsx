@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState, type ReactNode } from "react";
+import { DifficultyRange, MAX_DIFFICULTY, MIN_DIFFICULTY } from "@/components/DifficultyRange";
 import { Stars } from "@/components/Stars";
 import { TagPicker } from "@/components/TagPicker";
 import type { ProblemSummary } from "@/lib/content";
@@ -15,7 +16,7 @@ export type ProblemItem = ProblemSummary & { math: ReactNode };
 type Props = { items: ProblemItem[]; tags?: string[] };
 
 // With `tags`, shows difficulty/tag filters and a search box, all kept in the URL
-// (?difficulty=3&tag=Symmetry&tag=Partial+Fractions&q=ln).
+// (?min=2&max=4&tag=Symmetry&tag=Partial+Fractions&q=ln).
 export function ProblemList(props: Props) {
   if (!props.tags) return <ProblemTable items={props.items} />;
   // useSearchParams isn't known at build time; prerender the unfiltered list meanwhile.
@@ -31,14 +32,16 @@ function UrlFilteredList(props: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const filters: ProblemFilters = {
-    difficulty: Number(searchParams.get("difficulty")) || undefined,
+    min: Number(searchParams.get("min")) || undefined,
+    max: Number(searchParams.get("max")) || undefined,
     tags: searchParams.getAll("tag"),
     query: searchParams.get("q") ?? undefined,
   };
 
   function onChange(next: ProblemFilters) {
     const params = new URLSearchParams();
-    if (next.difficulty) params.set("difficulty", String(next.difficulty));
+    if (next.min && next.min > MIN_DIFFICULTY) params.set("min", String(next.min));
+    if (next.max && next.max < MAX_DIFFICULTY) params.set("max", String(next.max));
     for (const tag of next.tags ?? []) params.append("tag", tag);
     if (next.query) params.set("q", next.query);
     const query = params.toString();
@@ -54,7 +57,6 @@ function FilteredList({
   filters,
   onChange,
 }: Props & { filters: ProblemFilters; onChange: (f: ProblemFilters) => void }) {
-  const difficulties = [...new Set(items.map((p) => p.difficulty))].sort((a, b) => a - b);
   // The box keeps its own text so typing stays responsive while the URL catches up.
   const [query, setQuery] = useState(filters.query ?? "");
   const shown = filterProblems(items, { ...filters, query });
@@ -62,21 +64,16 @@ function FilteredList({
   return (
     <>
       <div className="mb-3 flex flex-wrap items-start gap-x-5 gap-y-3 font-sans text-sm">
-        <label className="flex items-center gap-2">
-          <span className="text-muted">Difficulty</span>
-          <select
-            className="field"
-            value={filters.difficulty ?? ""}
-            onChange={(e) => onChange({ ...filters, query, difficulty: Number(e.target.value) || undefined })}
-          >
-            <option value="">Any</option>
-            {difficulties.map((d) => (
-              <option key={d} value={d}>
-                {d}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className="flex items-start gap-2">
+          <span className="py-1.5 text-muted">Difficulty</span>
+          <div className="w-36 py-1.5">
+            <DifficultyRange
+              min={filters.min ?? MIN_DIFFICULTY}
+              max={filters.max ?? MAX_DIFFICULTY}
+              onChange={(min, max) => onChange({ ...filters, query, min, max })}
+            />
+          </div>
+        </div>
         <div className="flex items-start gap-2">
           <span className="py-1.5 text-muted">Tags</span>
           <div className="w-64">

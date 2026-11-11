@@ -1,4 +1,4 @@
-export type ProblemFilters = { difficulty?: number; tags?: string[]; query?: string };
+export type ProblemFilters = { min?: number; max?: number; tags?: string[]; query?: string };
 
 // Makes LaTeX searchable the way people type it: case, spacing, backslashes and braces
 // don't matter, so "ln x" finds "\ln x" and "e^x" finds "e^{x}".
@@ -9,12 +9,12 @@ function normalize(latex: string) {
     .replace(/[\s\\{}]/g, "");
 }
 
-// Exact difficulty; with tags selected, the problem carries at least one of them.
-// `query` matches the problem number exactly or any part of the LaTeX; a problem whose
-// number is the query is listed first.
+// Difficulty within [min, max] (either bound optional); with tags selected, the problem carries
+// at least one of them. `query` matches the problem number exactly or any part of the LaTeX;
+// a problem whose number is the query is listed first.
 export function filterProblems<T extends { id: number; latex: string; difficulty: number; tags: string[] }>(
   problems: T[],
-  { difficulty, tags, query }: ProblemFilters,
+  { min, max, tags, query }: ProblemFilters,
 ): T[] {
   const text = query?.trim().replace(/^#/, "") ?? "";
   const needle = normalize(text);
@@ -22,7 +22,8 @@ export function filterProblems<T extends { id: number; latex: string; difficulty
 
   const shown = problems.filter(
     (p) =>
-      (!difficulty || p.difficulty === difficulty) &&
+      (!min || p.difficulty >= min) &&
+      (!max || p.difficulty <= max) &&
       (!tags?.length || tags.some((t) => p.tags.includes(t))) &&
       (!needle || p.id === number || normalize(p.latex).includes(needle)),
   );

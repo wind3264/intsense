@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
+import { DifficultyRange, MAX_DIFFICULTY, MIN_DIFFICULTY } from "@/components/DifficultyRange";
 import { ProblemActions } from "@/components/ProblemActions";
 import { Solutions } from "@/components/Solutions";
 import { TagPicker } from "@/components/TagPicker";
@@ -14,13 +15,10 @@ import { fetchAnswer } from "@/lib/user-data";
 // `math` is the integral pre-rendered on the server.
 export type PracticeItem = ProblemSummary & { math: ReactNode };
 
-const MIN = 1;
-const MAX = 5;
-
 // Serves one random problem at a time from the ones matching the filters.
 export function Practice({ items, tags }: { items: PracticeItem[]; tags: string[] }) {
   const solves = useSolves();
-  const [filters, setFilters] = useState<PracticeFilters>({ min: MIN, max: MAX, tags: [] });
+  const [filters, setFilters] = useState<PracticeFilters>({ min: MIN_DIFFICULTY, max: MAX_DIFFICULTY, tags: [] });
   // Problems already served this visit; together with the user's solves they are not served again.
   const [seen, setSeen] = useState<number[]>([]);
   const [current, setCurrent] = useState<{ id: number; repeat: boolean } | null>(null);
@@ -95,50 +93,6 @@ export function Practice({ items, tags }: { items: PracticeItem[]; tags: string[
           <AnswerBox problemId={problem.id} />
         </article>
       )}
-    </>
-  );
-}
-
-// Two overlaid native sliders make one two-thumb range; dragging a thumb past the other pushes it along.
-function DifficultyRange({
-  min,
-  max,
-  onChange,
-}: {
-  min: number;
-  max: number;
-  onChange: (min: number, max: number) => void;
-}) {
-  const percent = (value: number) => `${((value - MIN) / (MAX - MIN)) * 100}%`;
-
-  return (
-    <>
-      <div className="range relative h-5">
-        {/* Inset by half a thumb so the track's ends line up with the thumbs' centers. */}
-        <div className="absolute inset-x-2 top-1/2 h-1 -translate-y-1/2 rounded-full bg-border">
-          <div
-            className="absolute inset-y-0 rounded-full bg-accent"
-            style={{ left: percent(min), right: `calc(100% - ${percent(max)})` }}
-          />
-        </div>
-        <input
-          type="range"
-          min={MIN}
-          max={MAX}
-          value={min}
-          aria-label="Minimum difficulty"
-          onChange={(e) => onChange(Number(e.target.value), Math.max(max, Number(e.target.value)))}
-        />
-        <input
-          type="range"
-          min={MIN}
-          max={MAX}
-          value={max}
-          aria-label="Maximum difficulty"
-          onChange={(e) => onChange(Math.min(min, Number(e.target.value)), Number(e.target.value))}
-        />
-      </div>
-      <div className="mt-1 text-center text-muted tabular-nums">{min === max ? min : `${min} - ${max}`}</div>
     </>
   );
 }

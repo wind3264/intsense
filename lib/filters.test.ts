@@ -17,8 +17,11 @@ describe("filterProblems", () => {
     expect(ids(filterProblems(problems, { query: "  " }))).toEqual([1, 2, 3, 4, 12]);
   });
 
-  it("filters by exact difficulty", () => {
-    expect(ids(filterProblems(problems, { difficulty: 3 }))).toEqual([2, 3]);
+  it("filters by difficulty range, inclusive", () => {
+    expect(ids(filterProblems(problems, { min: 3, max: 3 }))).toEqual([2, 3]);
+    expect(ids(filterProblems(problems, { min: 2, max: 3 }))).toEqual([2, 3, 12]);
+    expect(ids(filterProblems(problems, { min: 3 }))).toEqual([2, 3, 4]);
+    expect(ids(filterProblems(problems, { max: 2 }))).toEqual([1, 12]);
   });
 
   it("filters by tag, matching problems with several tags", () => {
@@ -32,8 +35,8 @@ describe("filterProblems", () => {
   });
 
   it("combines difficulty and tag", () => {
-    expect(ids(filterProblems(problems, { difficulty: 5, tags: ["Symmetry"] }))).toEqual([]);
-    expect(ids(filterProblems(problems, { difficulty: 5, tags: ["Feynman's Rule"] }))).toEqual([4]);
+    expect(ids(filterProblems(problems, { min: 5, tags: ["Symmetry"] }))).toEqual([]);
+    expect(ids(filterProblems(problems, { min: 5, tags: ["Feynman's Rule"] }))).toEqual([4]);
   });
 
   it("searches LaTeX ignoring case, spacing, backslashes and braces", () => {
@@ -50,6 +53,6 @@ describe("filterProblems", () => {
   });
 
   it("combines search with the other filters", () => {
-    expect(ids(filterProblems(problems, { query: "ln x", difficulty: 5 }))).toEqual([4]);
+    expect(ids(filterProblems(problems, { query: "ln x", min: 5 }))).toEqual([4]);
   });
 });
